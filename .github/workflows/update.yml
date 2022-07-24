@@ -1,0 +1,25 @@
+name: Download Upstream and Commit
+on:
+  schedule:
+    - cron:  '35 4 * * *'
+  workflow_dispatch:
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Download upstream
+        run: |
+          rm -rf *
+          git clone --depth 1 https://github.com/ruby-on-bioc/biocgem-packages
+      - name: Extract Gem
+        run: |
+          cp -r biocgem-packages/${GITHUB_REPOSITORY#*/}/* .
+          rm -rf biocgem-packages
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          commit-message: Update Gem
+          title: Automated Updates
+          body: This is an auto-generated PR with gem updates.
+          branch: gem-updates
