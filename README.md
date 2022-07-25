@@ -1,6 +1,7 @@
 # org.Hs.eg.db
 
 [![build](https://github.com/ruby-on-bioc/org.Hs.eg.db/actions/workflows/ci.yml/badge.svg)](https://github.com/ruby-on-bioc/org.Hs.eg.db/actions/workflows/ci.yml)
+[![version](https://img.shields.io/badge/release%20version-3.15.0-green.svg)](https://bioconductor.org/packages/org.Hs.eg.db/)
 
 :notes: [org.Hs.eg.db](https://bioconductor.org/packages/org.Hs.eg.db/) - for Ruby
 
